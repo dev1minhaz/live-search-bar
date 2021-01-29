@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block content %}
+    <input type="text" id="search_here" class="form-control mb-3" placeholder="type here to search...">
+    <div id="box">
+        {% for item in object_list %}
+            {% comment %} <b>{{ item }}</b> <br /> {% endcomment %}
+        {% endfor %}
+    </div>
+    
+{% endblock content %}
+{% block scripts %}
+    <script>
+        const data = "{{qs_json}}";
+        
+    </script>
+    <script src="{% static 'script.js' %}"></script>
+{% endblock scripts %}
